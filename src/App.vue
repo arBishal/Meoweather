@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen font-Ubuntu bg-primary">
+  <div class="flex flex-col min-h-screen font-Ubuntu bg-neutral-50">
     <Navbar />
     <RouterView />
   </div>
