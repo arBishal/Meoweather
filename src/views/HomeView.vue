@@ -1,5 +1,57 @@
-<script setup></script>
-
 <template>
-  <main></main>
+  <main class="max-w-screen-lg container text-black px-6 py-4 flex flex-col">
+    <div class="w-full flex flex-col gap-1">
+      <input
+        v-model="searchQuery"
+        @input="getSearchResults"
+        type="text"
+        placeholder="Search for a City or State!"
+        class="px-6 py-4 w-full bg-white border rounded-full text-base sm:text-lg"
+      />
+      <ul
+        v-if="mapboxSearchResults"
+        class="bg-white rounded-lg py-2 text-neutral-600 text-base sm:text-lg"
+      >
+        <li
+          v-for="searchResult in mapboxSearchResults"
+          :key="searchResult.id"
+          class="hover:text-black hover:bg-neutral-100 cursor-pointer px-4"
+        >
+          {{ searchResult.place_name }}
+        </li>
+      </ul>
+    </div>
+  </main>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const searchQuery = ref('')
+const queryTimeout = ref(null)
+const mapboxAPIKey =
+  'pk.eyJ1Ijoiam9obmtvbWFybmlja2kiLCJhIjoiY2t5NjFzODZvMHJkaDJ1bWx6OGVieGxreSJ9.IpojdT3U3NENknF6_WhR2Q'
+const mapboxSearchResults = ref(null)
+const searchError = ref(null)
+
+const getSearchResults = () => {
+  clearTimeout(queryTimeout.value)
+  queryTimeout.value = setTimeout(async () => {
+    if (searchQuery.value !== '') {
+      try {
+        const result = await axios.get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery.value}.json?access_token=${mapboxAPIKey}&types=place`
+        )
+        mapboxSearchResults.value = result.data.features
+        console.log(mapboxSearchResults.value)
+      } catch {
+        searchError.value = true
+      }
+
+      return
+    }
+    mapboxSearchResults.value = null
+  }, 300)
+}
+</script>
