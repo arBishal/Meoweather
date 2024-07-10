@@ -1,24 +1,33 @@
 <template>
   <main class="max-w-screen-lg container text-black px-6 py-4 flex flex-col">
     <div class="w-full flex flex-col gap-1">
+      <!-- search input -->
       <input
         v-model="searchQuery"
         @input="getSearchResults"
         type="text"
         placeholder="Search for a City or State!"
-        class="px-6 py-4 w-full bg-white border rounded-full text-base sm:text-lg"
+        class="px-6 py-4 w-full bg-white border rounded-full text-base sm:text-lg shadow-sm"
       />
+
+      <!-- search result -->
       <ul
         v-if="mapboxSearchResults"
-        class="bg-white rounded-lg py-2 text-neutral-600 text-base sm:text-lg"
+        class="bg-white rounded-lg py-2 text-neutral-600 text-base sm:text-lg shadow-sm"
       >
-        <li
-          v-for="searchResult in mapboxSearchResults"
-          :key="searchResult.id"
-          class="hover:text-black hover:bg-neutral-100 cursor-pointer px-4"
-        >
-          {{ searchResult.place_name }}
-        </li>
+        <p v-if="searchError" class="px-4">Sorry, something went wrong. Please try again!</p>
+        <p v-if="!searchError && mapboxSearchResults.length === 0" class="px-4">
+          No items match your search. Try with a different keyword!
+        </p>
+        <template v-else>
+          <li
+            v-for="searchResult in mapboxSearchResults"
+            :key="searchResult.id"
+            class="hover:text-black hover:bg-neutral-100 cursor-pointer px-4"
+          >
+            {{ searchResult.place_name }}
+          </li>
+        </template>
       </ul>
     </div>
   </main>
