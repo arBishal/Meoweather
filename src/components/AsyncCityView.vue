@@ -31,7 +31,7 @@ const getWeatherData = async () => {
   } catch (err) {
     console.log(err)
   }
-};
+}
 
 const weatherData = await getWeatherData();
 console.log(weatherData);

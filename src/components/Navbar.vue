@@ -11,13 +11,9 @@
 
       <!-- right component -->
       <div class="flex gap-4">
-        <i
-          class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"
-        ></i>
-        <i
-          @click="toggleModal"
-          class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"
-        ></i>
+        <i class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
+        <i @click="toggleModal"
+          class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
       </div>
 
       <!-- modal -->
@@ -54,12 +50,12 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
-import Modal from './Modal.vue'
+import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
+import Modal from './Modal.vue';
 
 const modalActive = ref(false)
 const toggleModal = () => {
-  modalActive.value = !modalActive.value
+  modalActive.value = !modalActive.value;
 }
 </script>
