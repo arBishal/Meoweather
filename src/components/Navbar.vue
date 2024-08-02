@@ -1,6 +1,6 @@
 <template>
   <header class="sticky top-0 bg-white border">
-    <nav class="container max-w-screen-lg flex items-center justify-between gap-4 py-4 text-black shadow-sm">
+    <nav class="container max-w-screen-md flex items-center justify-between gap-4 py-4 text-black shadow-sm">
       <!-- left component -->
       <RouterLink :to="{ name: 'home' }">
         <div class="flex justify-center items-center gap-3">

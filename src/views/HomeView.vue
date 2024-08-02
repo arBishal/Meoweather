@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-screen-lg container text-black px-6 py-4 flex flex-col">
+  <main class="max-w-screen-md container text-black px-6 py-4 flex flex-col">
     <div class="w-full flex flex-col gap-1">
       <!-- search input -->
       <input v-model="searchQuery" @input="getSearchResults" type="text" placeholder="Search for a City or State!"

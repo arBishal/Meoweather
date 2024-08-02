@@ -65,7 +65,7 @@
         <h2 class="text-2xl font-bold">Hourly Weather</h2>
         <div class="w-full flex gap-8 overflow-auto">
           <div v-for="hourData in weatherData.hourly" :key="hourData.dt"
-            class="flex flex-col gap-4 w-12 h-auto items-center mb-4">
+            class="flex flex-col gap-2 w-12 h-auto items-center mb-4">
             <p class="whitespace-nowrap text-md w-full">
               {{
                 new Date(
