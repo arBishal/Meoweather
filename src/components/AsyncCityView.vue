@@ -1,7 +1,7 @@
 <template>
   <div class="container max-w-screen-md flex flex-col flex-1 gap-6 items-center">
     <!-- banner -->
-    <div v-if="route.query.preview" class="mt-6 p-4 w-full text-center font-light bg-white rounded-lg shadow-sm border">
+    <div v-if="route.query.preview" class="p-4 w-full text-center font-light bg-white rounded-lg shadow-sm border">
       <p class="text-lg">
         You are curently in Preview mode.
       </p>
