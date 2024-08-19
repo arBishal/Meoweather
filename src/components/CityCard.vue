@@ -1,24 +1,28 @@
 <template>
-    <div class="p-4 bg-white border rounded-lg shadow-sm cursor-pointer">
-        <div class="flex flex-col flex-1">
-            <h2 class="text-2xl">{{ city.city }}</h2>
+    <div
+        class="flex justify-between p-4 bg-white border rounded-lg shadow-sm hover:scale-105 duration-300 hover:cursor-pointer">
+
+        <!-- left -->
+        <div class="flex flex-col">
+            <h2 class="text-2xl font-bold">{{ city.city }}</h2>
             <h3> {{ city.state }}</h3>
         </div>
 
-        <div class="flex flex-col gap-2">
-            <p class="text-2xl self-end">
+        <!-- right -->
+        <div class="flex items-center justify-center gap-4">
+            <p class="text-2xl font-semibold">
                 {{ Math.round(city.weather.main.temp) }}°C
             </p>
+            <div class="flex flex-col gap-1 text-xs">
+                <span>
+                    Highest: {{ Math.round(city.weather.main.temp_max) }}°C
+                </span>
+                <span>
+                    Lowest: {{ Math.round(city.weather.main.temp_min) }}°C
+                </span>
+            </div>
         </div>
 
-        <div class="flex gap-2 text-xs">
-            <span>
-                Highest: {{ Math.round(city.weather.main.temp_max) }}°C
-            </span>
-            <span>
-                Lowest: {{ Math.round(city.weather.main.temp_min) }}°C
-            </span>
-        </div>
     </div>
 </template>
 

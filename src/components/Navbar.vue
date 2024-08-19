@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 bg-white border mb-6">
+  <header class="sticky top-0 bg-white border mb-6 z-10">
     <nav class="container max-w-screen-md flex items-center justify-between gap-4 py-4 text-black shadow-sm">
       <!-- left component -->
       <RouterLink :to="{ name: 'home' }">
