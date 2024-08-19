@@ -1,5 +1,5 @@
 <template>
-  <main class="max-w-screen-md container text-black px-6 flex flex-col">
+  <main class="max-w-screen-md container text-black px-6 flex flex-col gap-6">
     <div class="w-full flex flex-col gap-1">
       <!-- search input -->
       <input v-model="searchQuery" @input="getSearchResults" type="text" placeholder="Search for a City or State!"
@@ -19,6 +19,16 @@
         </template>
       </ul>
     </div>
+
+    <!-- saved cities -->
+    <div class="flex flex-col gap-4">
+      <Suspense>
+        <CityList />
+        <template #fallback>
+          <span class="container h-96 flex items-center justify-center font-bold text-xl">Loading...</span>
+        </template>
+      </Suspense>
+    </div>
   </main>
 </template>
 
@@ -26,6 +36,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
+import CityList from "../components/CityList.vue";
 
 const searchQuery = ref('');
 const queryTimeout = ref(null);
