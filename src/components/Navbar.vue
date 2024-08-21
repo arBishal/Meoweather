@@ -13,6 +13,8 @@
       <div class="flex gap-4">
         <i @click="addCity" v-if="route.query.preview"
           class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
+        <i v-if="!route.query.preview" @click="removeCity"
+          class="fa-solid fa-circle-minus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
         <i @click="toggleModal"
           class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
       </div>
@@ -89,6 +91,18 @@ const addCity = () => {
   delete query.preview;
   query.id = locationObj.id;
   router.replace({ query });
+  console.log(route.name);
 };
+
+
+const removeCity = () => {
+  const cities = JSON.parse(localStorage.getItem('savedCities'));
+  const updatedCities = cities.filter(city => city.id !== route.query.id);
+  localStorage.setItem('savedCities', JSON.stringify(updatedCities));
+  router.push({
+    name: 'home',
+  });
+  console.log(route.name);
+}
 
 </script>

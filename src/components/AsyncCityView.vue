@@ -10,6 +10,8 @@
       </p>
     </div>
 
+
+
     <!-- overview -->
     <div class="w-full flex flex-col items-center gap-2 px-8 py-6 bg-white rounded-lg shadow-sm border mb-6">
       <!-- city heading -->
@@ -111,10 +113,6 @@
           </div>
         </div>
 
-        <span class="text-xl font-bold mt-2 -mb-2">Remove City</span>
-        <i @click="removeCity"
-          class="fa-solid fa-circle-minus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
-
       </div>
     </div>
   </div>
@@ -153,16 +151,5 @@ const getWeatherData = async () => {
 
 const weatherData = await getWeatherData();
 console.log(weatherData);
-
-const router = useRouter();
-
-const removeCity = () => {
-  const cities = JSON.parse(localStorage.getItem('savedCities'));
-  const updatedCities = cities.filter(city => city.id !== route.query.id);
-  localStorage.setItem('savedCities', JSON.stringify(updatedCities));
-  router.push({
-    name: 'home',
-  });
-}
 
 </script>
