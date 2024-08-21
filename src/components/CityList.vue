@@ -2,6 +2,14 @@
     <div v-for="city in savedCities" :key="city.id">
         <CityCard :city="city" @click="goToCityView(city)" />
     </div>
+    <div v-if="savedCities.length === 0"
+        class="text-center text-base sm:text-lg font-thin flex flex-col gap-12 items-center">
+        <div>
+            Currently there are no saved cities. <br> Please search and save a city to access it from here for later
+            time.
+        </div>
+        <img src="../assets/home-illustration.png" class="w-9/12" />
+    </div>
 </template>
 
 <script setup>
