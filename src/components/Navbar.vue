@@ -11,9 +11,9 @@
 
       <!-- right component -->
       <div class="flex gap-4">
-        <i @click="addCity" v-if="route.query.preview"
+        <i v-if="route.query.preview" @click="addCity"
           class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
-        <i v-if="!route.query.preview" @click="removeCity"
+        <i v-if="route.name === 'cityView' && !route.query.preview" @click="removeCity"
           class="fa-solid fa-circle-minus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
         <i @click="toggleModal"
           class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
