@@ -25,7 +25,7 @@
       <Suspense>
         <CityList />
         <template #fallback>
-          <span class="container h-96 flex items-center justify-center font-bold text-xl">Loading...</span>
+          <div class="border-white h-20 w-20 animate-spin rounded-full border-8 border-t-neutral-600"></div>
         </template>
       </Suspense>
     </div>
