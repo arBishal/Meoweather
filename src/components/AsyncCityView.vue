@@ -1,12 +1,21 @@
 <template>
   <div class="container max-w-screen-md flex flex-col flex-1 gap-6 items-center">
     <!-- banner -->
-    <div v-if="route.query.preview" class="p-4 w-full text-center font-light bg-white rounded-lg shadow-sm border">
-      <p class="text-lg">
+    <div v-if="route.query.preview"
+      class="text-base sm:text-lg p-4 w-full text-center font-light bg-white rounded-lg shadow-sm border">
+      <p>
         You are curently in Preview mode.
       </p>
-      <p class="text-lg">
-        To start tracking the city, click the '<b>+</b>' icon in the top.
+      <p>
+        To start tracking the city, click the '<b>+</b>' icon at the top.
+      </p>
+    </div>
+    <div v-else class="text-base sm:text-lg p-4 w-full text-center font-light bg-white rounded-lg shadow-sm border">
+      <p>
+        You are curently in Tracking mode.
+      </p>
+      <p>
+        To remove the city, click the '<b>-</b>' icon at the top.
       </p>
     </div>
 
@@ -90,7 +99,7 @@
       <hr class="border-opacity-10 border w-full" />
 
       <!-- Weekly Weather -->
-      <div class="max-w-screen-md w-full py-6 flex flex-col items-center justify-between gap-4">
+      <div class="max-w-screen-md w-full py-6 flex flex-col items-center justify-between gap-2">
 
         <h2 class="text-2xl font-bold">7 Day Forecast</h2>
 
