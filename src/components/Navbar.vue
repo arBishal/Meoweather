@@ -3,20 +3,20 @@
     <nav class="container max-w-screen-md flex items-center justify-between gap-4 py-4 text-black shadow-sm">
       <!-- left component -->
       <RouterLink :to="{ name: 'home' }">
-        <div class="flex justify-center items-center gap-3">
-          <i class="fa-solid fa-cloud-sun text-2xl"></i>
-          <span class="text-2xl font-bold">Vieweather</span>
+        <div class="flex justify-center items-center gap-3 hover:text-neutral-600 duration-300">
+          <i class="fa-solid fa-paw text-3xl"></i>
+          <span class="text-2xl font-bold">Meoweather</span>
         </div>
       </RouterLink>
 
       <!-- right component -->
       <div class="flex gap-4">
         <i v-if="route.query.preview" @click="addCity"
-          class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
+          class="fa-solid fa-circle-plus text-2xl sm:text-3xl hover:text-neutral-700 duration-300 cursor-pointer"></i>
         <i v-if="route.name === 'cityView' && !route.query.preview" @click="removeCity"
-          class="fa-solid fa-circle-minus text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
+          class="fa-solid fa-circle-minus text-2xl sm:text-3xl hover:text-neutral-700 duration-300 cursor-pointer"></i>
         <i @click="toggleModal"
-          class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-150 cursor-pointer"></i>
+          class="fa-solid fa-circle-question text-2xl sm:text-3xl hover:text-neutral-700 duration-300 cursor-pointer"></i>
       </div>
 
       <!-- modal -->

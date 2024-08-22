@@ -15,7 +15,7 @@
         You are curently in Tracking mode.
       </p>
       <p>
-        To remove the city, click the '<b>-</b>' icon at the top.
+        To remove the city, click the '<b>–</b>' icon at the top.
       </p>
     </div>
 

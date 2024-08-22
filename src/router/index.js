@@ -25,7 +25,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${ to.params.state ? `${to.params.city}` : to.meta.title} • Vieweather`;
+  document.title = `${ to.params.state ? `${to.params.city}` : to.meta.title} • Meoweather`;
   next();
 });
 
