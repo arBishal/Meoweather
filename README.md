@@ -6,7 +6,9 @@ A simple weather app built in Vue.js that utilizes an third party API to fetch w
 
 ### Tech Stack
 Vue.js
+
 TailwindCSS
+
 Local Storage
 
 ## Recommended IDE Setup
