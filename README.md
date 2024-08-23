@@ -1,10 +1,13 @@
-# Vieweather
+# Meoweather
 
 ## About
 
-App under development.
+A simple weather app built in Vue.js that utilizes an third party API to fetch weather data.
 
-This template should help get you started developing with Vue 3 in Vite.
+### Tech Stack
+Vue.js
+TailwindCSS
+Local Storage
 
 ## Recommended IDE Setup
 
